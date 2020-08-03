@@ -2,12 +2,15 @@ package de.ungerts.scala.rest
 
 import io.smallrye.mutiny
 import javax.enterprise.context.ApplicationScoped
-import javax.ws.rs.{GET, Path, Produces}
+import javax.ws.rs.GET
+import javax.ws.rs.Path
+import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 import de.ungerts.mutiny.scaladsl.Uni
 import de.ungerts.mutiny.scala.MutinyConverters._
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.ExecutionContext
+import scala.concurrent.Future
 
 
 @Path("/hello")
