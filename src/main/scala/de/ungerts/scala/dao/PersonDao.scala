@@ -8,7 +8,7 @@ import scala.concurrent.{ExecutionContext, Future}
 class PersonDao(val db: H2Profile.backend.DatabaseDef)(implicit val ec: ExecutionContext) {
 
     def nameById(id: Int): Future[String] = {
-        val query = sql"SELECT name FROM PERSON where id = $id".as[(String)].headOption
+        val query = sql"SELECT name FROM PERSON where id = $id".as[String].headOption
         for {
             result <- db.run(query)
         } yield {
@@ -16,6 +16,15 @@ class PersonDao(val db: H2Profile.backend.DatabaseDef)(implicit val ec: Executio
                 case Some(name) => name
                 case _ => "Nobody"
             }
+        }
+    }
+
+    def allPersons(): Future[Map[Int, String]] = {
+        val query = sql"SELECT id, name FROM PERSON".as[(Int, String)]
+        for {
+            result <- db.run(query)
+        } yield {
+            result.toMap
         }
     }
 
