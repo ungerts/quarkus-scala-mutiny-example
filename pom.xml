@@ -72,10 +72,27 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-context-propagation</artifactId>
     </dependency>
+   <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-h2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-agroal</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-flyway</artifactId>
+    </dependency>
     <dependency>
       <groupId>de.ungerts.scala</groupId>
       <artifactId>mutiny-scala</artifactId>
       <version>0.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.slick</groupId>
+      <artifactId>slick_2.12</artifactId>
+      <version>3.3.2</version>
     </dependency>
   </dependencies>
   <build>
@@ -154,7 +171,7 @@
       <url>https://repo1.maven.org/maven2</url>
     </repository>
     <repository>
-      <id>bintray/ungerts</id>
+      <id>bintray-ungerts</id>
       <url>https://dl.bintray.com/ungerts/maven</url>
     </repository>
   </repositories>
