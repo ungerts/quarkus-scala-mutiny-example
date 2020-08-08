@@ -1,5 +1,6 @@
 package de.ungerts.scala.dao
 
+import de.ungerts.scala.entity.Person
 import slick.jdbc.H2Profile
 import slick.jdbc.H2Profile.api._
 
@@ -19,12 +20,12 @@ class PersonDao(val db: H2Profile.backend.DatabaseDef)(implicit val ec: Executio
         }
     }
 
-    def allPersons(): Future[Map[Int, String]] = {
+    def allPersons(): Future[Seq[Map[String, Any]]] = {
         val query = sql"SELECT id, name FROM PERSON".as[(Int, String)]
         for {
             result <- db.run(query)
         } yield {
-            result.toMap
+            result map (tuple => Map("id" -> tuple._1, "name" -> tuple._2))
         }
     }
 
