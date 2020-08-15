@@ -5,7 +5,6 @@ import javax.enterprise.context.ApplicationScoped
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.{GET, Path, Produces}
 import de.ungerts.mutiny.scala.MutinyConverters._
-import de.ungerts.scala.entity.Person
 
 import scala.concurrent.ExecutionContext
 import io.smallrye.mutiny
