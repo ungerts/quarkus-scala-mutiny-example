@@ -1,6 +1,5 @@
 package de.ungerts.scala.dao
 
-import de.ungerts.scala.entity.Person
 import slick.jdbc.H2Profile
 import slick.jdbc.H2Profile.api._
 
